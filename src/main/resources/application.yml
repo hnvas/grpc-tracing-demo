@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: grpc-tracing-demo
+
+management:
+  tracing:
+    enabled: true
+
+grpc:
+  server:
+    port: 6067
+
+logging:
+  pattern:
+    console: "%green([%d{yyyy-MM-dd HH:mm:ss.SSS}]) - %magenta([%t]) - %highlight([%level]) - %cyan([%class->%method:%line]) - %yellow([traceId=%X{traceId}, spanId=%X{spanId}]): %msg%n"
